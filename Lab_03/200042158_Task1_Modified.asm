@@ -22,31 +22,10 @@ count_loop:
     jmp count_loop           
 
 end_counting:
+    mov dh, 0
     mov dl, cl               
-    
-    ; Print the count
-    mov ax,si
-    mov dx,0
-    mov bx,10
-    mov cx,0
-    Loop_1:
-        div bx
-        push dx
-        mov dx,0
-        add cx,1
-        cmp ax,0 ;check if any digits left
-        jne Loop_1
-        mov ah,02h
-    Loop_2:
-        pop dx
-        add dx, '0'
-        int 21h
-        loop Loop_2 ;also decrements cx
     
     hlt
 main endp
 end main
 ret
-          
-          
-          
