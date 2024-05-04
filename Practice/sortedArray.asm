@@ -37,7 +37,7 @@ main proc
             mov al,arr[si]
             mov dl,arr[si+1]
             cmp al,dl
-            jc noSwap
+            jl noSwap         ;jl for ascending order ;jg for descending order
             mov arr[si],dl
             mov arr[si+1],al
             noSwap:
