@@ -103,8 +103,8 @@ Calculate_Average proc
     xor ax,ax
     mov al,bh
     mov bh,5
-    div bh   ; Divide AX register with BH
-    mov bh,al   
+    div bh      ; Divide AX register with BH ;Remainder will be stored in AH
+    mov bh,al   ;Result will be stored in al   
     mov num_average,bh
     ret
     avg_label:
